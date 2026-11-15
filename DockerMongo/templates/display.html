@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Stored Controle Times</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container">
+  <h1>Stored Controle Times</h1>
+  {% if error %}
+    <p style="color:red">{{ error }}</p>
+  {% elif not items %}
+    <p>No controle times have been submitted yet.</p>
+  {% else %}
+    <p>Brevet: {{ items[0].brevet_dist_km }} km, starting {{ items[0].begin_time }}</p>
+    <table class="table table-striped">
+      <tr><th>Miles</th><th>Km</th><th>Location</th><th>Open</th><th>Close</th></tr>
+      {% for item in items %}
+      <tr>
+        <td>{{ item.miles }}</td><td>{{ item.km }}</td><td>{{ item.location }}</td>
+        <td>{{ item.open }}</td><td>{{ item.close }}</td>
+      </tr>
+      {% endfor %}
+    </table>
+  {% endif %}
+  <a href="/">&larr; Back to calculator</a>
+</div>
+</body>
+</html>

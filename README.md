@@ -1,55 +1,3 @@
-<<<<<<< HEAD
-# Project 5: Brevet time calculator with Ajax and MongoDB
-
-Simple list of controle times from project 4 stored in MongoDB database.
-
-## What is in this repository
-
-You have a minimal implementation of Docker compose in DockerMongo folder, using which you can connect the flask app to MongoDB (as demonstrated in class). Refer to the lecture slide `05a-Table-driven.pdf` and `05b-Docker-Compose.pdf`. You'll also need MongoCommands.txt. Solved acp_times.py file is in Canvas! 
-
-## Functionality you'll add
-
-You will reuse *your* code from project 4 (https://bitbucket.org/UOCIS322/proj4-brevets/). Recall: you created a list of open and close controle times using AJAX. In this project, you will create the following functionalities.
-
-1. Create two buttons "Submit" and "Display" in the page where have controle times.
-2. On clicking the Submit button, the control times should be entered into the database.
-3. On clicking the Display button, the entries from the database should be displayed in a new page.
-
-Handle error cases appropriately. For example, Submit should return an error if there are no controle times. One can imagine many such cases: you'll come up with as many cases as possible.
-
-## Tasks
-
-* Submit a working application.
-* A README.md file that includes not only identifying information (your name) but but also a revised, clear specification 
-  of the brevet controle time calculation rules.
-* Dockerfile
-* Test cases for the two buttons. No need to run nose.
-* docker-compose.yml
-
-### You'll turn in your credentials.ini from which we will get the following:
-
-* `author`
-* `repo`
-
-All must be under the section `[DEFAULT]`.
-
-## Grading Rubric
-
-* If your code works as expected: 100 points. This includes:
-	* AJAX in the frontend. That is, open and close times are automatically populated, 
-	* Frontend to backend interaction (with correct requests/responses), 
-	* README is updated with your name and email.
-* If the AJAX logic is not working, 10 points will be docked off. 
-* If the README is not clear or missing, up to 15 points will be docked off. 
-* If the two test cases fail, up to 15 points will be docked off.
-* If the logic to enter into or retrieve from the database is wrong, 30 points will be docked off.
-* If none of the functionalities work, 30 points will be given assuming 
-    * The credentials.ini is submitted with the correct URL of your repo, and
-    * Dockerfile is present 
-    * Docker-compose.yml works/builds without any errors
-* If the Docker-compose.yml doesn't build or is missing, 10 points will be docked off.
-* If credentials.ini is missing, 0 will be assigned.
-=======
 # Project 5: Brevet Time Calculator with Ajax and MongoDB
 
 **Author:** Canyon DeLong
@@ -73,6 +21,7 @@ Two buttons store the results in MongoDB and show them again:
 
 ## Running
 ```
+cd DockerMongo
 docker compose up --build
 ```
 Then open http://localhost:5001
@@ -106,4 +55,3 @@ Special cases:
   distance's max-speed time and closes at the fixed limit
   (200 km: 13h30, 300 km: 20h, 400 km: 27h, 600 km: 40h, 1000 km: 75h).
 * Times are rounded to the nearest minute.
->>>>>>> 739cf67 (Project 5: MongoDB submit and display)
